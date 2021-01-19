@@ -1,5 +1,6 @@
 <template>
   <div>
+    <div>My NAVIGATION BAAAAARRR</div>
     <Nuxt />
   </div>
 </template>
