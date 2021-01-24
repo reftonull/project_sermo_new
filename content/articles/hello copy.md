@@ -1,7 +1,7 @@
 ---
 title: Learning React, the hard way
 description: 'Empower your NuxtJS application with @nuxt/content module: write in a content/ directory and fetch your Markdown, JSON, YAML and CSV files through a MongoDB like API, acting as a Git-based Headless CMS.'
-img: https://d8fa96d6061491bec818-41a52a109fa0fefb17700938627149a6.ssl.cf1.rackcdn.com/Apple_ShotoniPhone_NIKCHU_hero_011221-1611067385898.jpg
+img: https://d8fa96d6061491bec818-41a52a109fa0fefb17700938627149a6.ssl.cf1.rackcdn.com/Screen%20Shot%202021-01-14%20at%207-1610673350099.09.06%20PM.png
 tag: cover to cover
 ---
 
