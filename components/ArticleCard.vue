@@ -31,7 +31,7 @@
           <CopyIcon></CopyIcon>
         </div>
       </div>
-      <div class="text-md leading-5">
+      <div class="text-md leading-6">
         {{ article.description }}
       </div>
     </div>
@@ -101,9 +101,9 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .article-image {
-  box-shadow: inset 0px -100px 60px rgba(0, 0, 0, 1);
+  box-shadow: inset 0px -100px 60px #050505;
 }
 
 .img {

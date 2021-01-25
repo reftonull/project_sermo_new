@@ -16,6 +16,12 @@ module.exports = {
       maxWidth: {
         prose: '70ch',
       },
+      maxHeight: {
+        96: '35rem',
+      },
+      colors: {
+        'dark-gray': '#050505',
+      },
     },
   },
   variants: {

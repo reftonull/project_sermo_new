@@ -9,7 +9,16 @@
 
 <style>
 html {
-  @apply bg-black text-white;
+  @apply bg-dark-gray text-white;
+}
+
+body {
+  @apply text-gray-200 leading-snug;
+  font-size: 18px;
+}
+
+h2 {
+  @apply text-2xl font-semibold leading-relaxed pt-3 mb-4 border-b-4 border-gray-700 inline-block;
 }
 
 .toasted.toasted-primary.toast {
