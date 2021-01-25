@@ -1,6 +1,6 @@
 <template>
   <div class="mx-auto my-auto max-w-md relative">
-    <div class="shadow-inner article-image w-auto">
+    <div v-if="article.img" class="shadow-inner article-image w-auto">
       <img :src="article.img" class="img rounded-xl" />
     </div>
     <div class="px-2 -mt-20">
@@ -21,18 +21,18 @@
       <div
         class="flex flex-row space-x-2 font-semibold text-gray-600 text-md leading-5 pb-2"
       >
-        <div>October 17, 2021</div>
+        <div>{{ formatDate(article.createdAt) }}</div>
         <div>•</div>
-        <div>5 minute read</div>
-        <div>•</div>
-        <div :class="tag.textColor">
+        <div v-if="article.words">
+          {{ Math.round(article.words / 175) }} minute read
+        </div>
+        <div v-if="article.words">•</div>
+        <div class="cursor-pointer" :class="tag.textColor" @click="copyLink()">
           <CopyIcon></CopyIcon>
         </div>
       </div>
       <div class="text-md leading-5">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sed nisl
-        luctus, congue odio non, fermentum est. Sed a risus mi. Ut non massa
-        justo.
+        {{ article.description }}
       </div>
     </div>
   </div>
@@ -64,6 +64,40 @@ export default {
 
     return { tag }
   },
+  methods: {
+    formatDate(date) {
+      const options = { year: 'numeric', month: 'long', day: 'numeric' }
+      return new Date(date).toLocaleDateString('en', options)
+    },
+    copyLink() {
+      const path = 'localhost:3000/blog/' + this.article.slug
+      navigator.clipboard.writeText(path)
+      const options = {
+        duration: 1500,
+        className: 'toast',
+        iconPack: 'callback',
+        icon: (el) => {
+          el.innerHTML = `<svg
+              xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <polyline points="9 11 12 14 22 4" />
+                <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+            </svg>`
+
+          return el
+        },
+      }
+      this.$toast.show('Link Copied!', options)
+    },
+  },
 }
 </script>
 
@@ -75,5 +109,7 @@ export default {
 .img {
   z-index: -2;
   position: relative;
+  min-width: 200px;
+  min-height: 200px;
 }
 </style>

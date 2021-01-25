@@ -1,6 +1,6 @@
 <template>
   <div
-    class="max-w-6xl mx-auto grid grid-flow-row lg:grid-cols-2 grid-rows-1 gap-0 pt-4"
+    class="max-w-6xl mx-auto grid grid-flow-row lg:grid-cols-2 grid-rows-1 gap-0 pt-4 px-4"
   >
     <div v-for="article of articles" :key="article.slug" class="mb-10">
       <ArticleCard :article="article" :tags="tagsList"></ArticleCard>
@@ -12,7 +12,15 @@
 export default {
   async asyncData({ $content, params }) {
     const articles = await $content('articles', params.slug)
-      .only(['title', 'description', 'img', 'slug', 'tag'])
+      .only([
+        'title',
+        'description',
+        'img',
+        'slug',
+        'tag',
+        'createdAt',
+        'words',
+      ])
       .sortBy('createdAt', 'desc')
       .fetch()
 

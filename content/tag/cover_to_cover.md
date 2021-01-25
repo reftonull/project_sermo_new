@@ -1,4 +1,4 @@
 ---
 name: cover to cover
-color: green-600
+color: blue-500
 ---

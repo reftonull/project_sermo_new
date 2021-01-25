@@ -44,10 +44,15 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/content
     '@nuxt/content',
+    '@nuxtjs/toast',
   ],
 
   // Content module configuration: https://go.nuxtjs.dev/config-content
   content: {},
+
+  toast: {
+    position: 'bottom-right',
+  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
