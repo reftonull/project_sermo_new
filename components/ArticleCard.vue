@@ -1,19 +1,19 @@
 <template>
-  <div class="mx-auto my-auto max-w-md relative">
+  <div class="mx-auto my-auto lg:max-w-full max-w-md relative">
     <div v-if="article.img" class="shadow-inner article-image w-auto">
       <img :src="article.img" class="img rounded-xl" />
     </div>
     <div class="px-2 -mt-20">
       <div
         class="font-sans font-bold border-b-2 inline-block"
-        :class="tag.tagColor"
+        :style="{ color: tag.accentColor, 'border-color': tag.accentColor }"
       >
         {{ tag.name.toUpperCase() }}
       </div>
       <NuxtLink :to="{ name: 'blog-slug', params: { slug: article.slug } }">
         <div
-          class="font-sans text-4xl font-semibold leading-none py-2"
-          :class="tag.hoverColor"
+          class="font-sans text-4xl font-semibold leading-none py-2 title"
+          :style="styleObject"
         >
           {{ article.title }}
         </div>
@@ -27,7 +27,11 @@
           {{ Math.round(article.words / 175) }} minute read
         </div>
         <div v-if="article.words">•</div>
-        <div class="cursor-pointer" :class="tag.textColor" @click="copyLink()">
+        <div
+          class="cursor-pointer"
+          :style="{ color: tag.accentColor }"
+          @click="copyLink()"
+        >
           <CopyIcon></CopyIcon>
         </div>
       </div>
@@ -58,11 +62,16 @@ export default {
       return e.name === art.tag
     })[0]
 
-    tag.tagColor = 'text-' + tag.color + ' border-' + tag.color
-    tag.hoverColor = 'hover:text-' + tag.color
-    tag.textColor = 'text-' + tag.color
+    tag.accentColor = tag.color.substring(1)
 
     return { tag }
+  },
+  computed: {
+    styleObject() {
+      return {
+        '--color': this.tag.accentColor,
+      }
+    },
   },
   methods: {
     formatDate(date) {
@@ -104,6 +113,10 @@ export default {
 <style scoped>
 .article-image {
   box-shadow: inset 0px -100px 60px #050505;
+}
+
+.title:hover {
+  color: var(--color);
 }
 
 .img {

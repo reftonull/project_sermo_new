@@ -14,11 +14,28 @@ html {
 
 body {
   @apply text-gray-200 leading-snug;
-  font-size: 18px;
+}
+
+@screen lg {
+  body {
+    @apply text-lg;
+  }
+}
+
+h1 {
+  @apply text-3xl font-semibold leading-relaxed mb-4 border-b-4 border-gray-700 inline-block;
 }
 
 h2 {
-  @apply text-2xl font-semibold leading-relaxed pt-3 mb-4 border-b-4 border-gray-700 inline-block;
+  @apply text-2xl font-semibold leading-relaxed mb-4 border-b-4 border-gray-700 inline-block;
+}
+
+h3 {
+  @apply text-xl font-semibold leading-relaxed mb-4 border-b-4 border-gray-700 inline-block;
+}
+
+p {
+  @apply mb-4;
 }
 
 .toasted.toasted-primary.toast {
@@ -27,5 +44,20 @@ h2 {
 
 .toasted.toasted-primary.toast i {
   @apply pr-2;
+}
+
+blockquote {
+  @apply mb-4;
+}
+
+pre {
+  @apply rounded-md;
+}
+
+.nuxt-content-highlight {
+  @apply relative;
+}
+.nuxt-content-highlight .filename {
+  @apply absolute bg-gray-900 right-0 text-gray-600 font-light z-10 mr-2 mt-1 text-sm;
 }
 </style>

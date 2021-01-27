@@ -1,4 +1,4 @@
 ---
 name: cover to cover
-color: blue-500
+color: \#7EC1FF
 ---

@@ -3,6 +3,8 @@ title: "Bob Iger: A Tale in Moderation"
 description: This is a short description used in Twitter cards and Facebook Open Graph.
 img: https://firebasestorage.googleapis.com/v0/b/project-sermo.appspot.com/o/Scene.png?alt=media&token=3ea8b757-b238-4668-88b1-a0f778b4959d
 tag: cover to cover
+isFeatured: true
+order: 1
 ---
 
 I don’t read many books about how to run a business. In my experience, it is rare to find one that really captures what it’s like to build and operate an organization or that has tips you could really put into practice.

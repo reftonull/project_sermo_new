@@ -1,8 +1,8 @@
 <template>
   <div
-    class="max-w-6xl mx-auto grid grid-flow-row lg:grid-cols-2 grid-rows-1 gap-0 pt-4 px-4"
+    class="max-w-6xl mx-auto grid grid-flow-row lg:grid-cols-2 grid-rows-1 gap-10 pt-4 px-5"
   >
-    <div v-for="article of articles" :key="article.slug" class="mb-10">
+    <div v-for="article of articles" :key="article.slug" class="">
       <ArticleCard :article="article" :tags="tagsList"></ArticleCard>
     </div>
   </div>

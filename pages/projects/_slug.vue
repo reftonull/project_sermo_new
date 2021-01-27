@@ -1,9 +1,9 @@
 <script>
 export default {
   async asyncData({ $content, params }) {
-    const about = await $content('about').fetch()
+    const project = await $content('projects', params.slug).fetch()
 
-    return { about }
+    return { project }
   },
   methods: {
     formatDate(date) {
@@ -11,7 +11,7 @@ export default {
       return new Date(date).toLocaleDateString('en', options)
     },
     copyLink() {
-      const path = 'localhost:3000/blog/' + this.article.slug
+      const path = 'localhost:3000/project/' + this.project.slug
       navigator.clipboard.writeText(path)
       const options = {
         duration: 1500,
@@ -47,37 +47,40 @@ export default {
     <div class="mx-auto my-auto max-w-6xl p-5 relative">
       <div class="lg:px-2 m-auto">
         <div class="font-sans text-4xl font-semibold leading-none py-2">
-          {{ about.title }}
+          {{ project.title }}
         </div>
         <div
           class="flex flex-row space-x-2 font-semibold text-gray-600 text-md leading-5 pb-2"
         >
-          <div>{{ formatDate(about.createdAt) }}</div>
+          <div>{{ formatDate(project.createdAt) }}</div>
           <div>•</div>
-          <div v-if="about.words">
-            {{ Math.round(about.words / 175) }} minute read
+          <div v-if="project.words">
+            {{ Math.round(project.words / 175) }} minute read
           </div>
-          <div v-if="about.words">•</div>
+          <div v-if="project.words">•</div>
           <div class="cursor-pointer" @click="copyLink()">
             <CopyIcon></CopyIcon>
           </div>
         </div>
       </div>
-      <div v-if="about.img" class="shadow-inner article-image w-auto flex mb-6">
+      <div
+        v-if="project.img"
+        class="shadow-inner article-image w-auto flex mb-6"
+      >
         <img
-          :src="about.img"
+          :src="project.img"
           class="img rounded-xl max-h-96 object-cover flex-1"
         />
       </div>
       <div class="flex lg:flex-row flex-col-reverse m-auto pt-4 lg:space-x-5">
         <nuxt-content
-          :document="about"
+          :document="project"
           class="font-sans max-w-prose flex-auto"
         />
         <nav class="flex-shrink-0 mb-6">
           <div class="text-sm font-semibold text-gray-600">CONTENTS</div>
           <ul>
-            <li v-for="link of about.toc" :key="link.id">
+            <li v-for="link of project.toc" :key="link.id">
               <NuxtLink :to="`#${link.id}`"
                 ><div
                   class="text-base my-3 font-medium text-gray-700 content-link"
@@ -92,3 +95,32 @@ export default {
     </div>
   </article>
 </template>
+
+<style>
+.article-image {
+  box-shadow: inset 0px -50px 40px #050505, inset 0px 50px 40px #050505;
+}
+
+.img {
+  z-index: -2;
+  position: relative;
+  min-width: 200px;
+  min-height: 200px;
+}
+
+.content-link:hover {
+  transform: translateX(10px);
+  transition: 0.2s;
+}
+
+blockquote > p {
+  @apply px-4 border-l-4 py-3 mb-0 font-medium rounded-md bg-gray-900;
+}
+
+aside {
+  @apply px-4 border-l-4 py-3 font-medium rounded-md bg-gray-900 mb-4;
+}
+
+.nuxt-content > a {
+}
+</style>

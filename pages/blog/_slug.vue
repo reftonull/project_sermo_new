@@ -8,11 +8,16 @@ export default {
       .fetch()
     const tag = tagsList[0]
 
-    tag.tagColor = 'text-' + tag.color + ' border-' + tag.color
-    tag.hoverColor = 'hover:text-' + tag.color
-    tag.textColor = 'text-' + tag.color
+    tag.accentColor = tag.color.substring(1)
 
     return { article, tag }
+  },
+  computed: {
+    styleObject() {
+      return {
+        '--color': this.tag.accentColor,
+      }
+    },
   },
   methods: {
     formatDate(date) {
@@ -53,11 +58,11 @@ export default {
 
 <template>
   <article>
-    <div class="mx-auto my-auto max-w-6xl p-5 relative mb-64">
-      <div class="px-2 m-auto">
+    <div class="mx-auto my-auto max-w-6xl p-5 relative">
+      <div class="lg:px-2 m-auto">
         <div
-          class="font-sans font-bold border-b-2 inline-block"
-          :class="tag.tagColor"
+          class="font-sans font-bold border-b-2 inline-block bord"
+          :style="{ color: tag.accentColor, 'border-color': tag.accentColor }"
         >
           {{ tag.name.toUpperCase() }}
         </div>
@@ -75,7 +80,7 @@ export default {
           <div v-if="article.words">•</div>
           <div
             class="cursor-pointer"
-            :class="tag.textColor"
+            :style="{ color: tag.accentColor }"
             @click="copyLink()"
           >
             <CopyIcon></CopyIcon>
@@ -91,13 +96,14 @@ export default {
           class="img rounded-xl max-h-96 object-cover flex-1"
         />
       </div>
-      <div class="flex lg:flex-row flex-col-reverse m-auto p-4 lg:space-x-5">
+      <div class="flex lg:flex-row flex-col-reverse m-auto pt-4 lg:space-x-5">
         <nuxt-content
           :document="article"
           class="font-sans max-w-prose flex-auto"
+          :style="styleObject"
         />
         <nav class="flex-shrink-0 mb-6">
-          <p class="text-sm font-semibold text-gray-600">CONTENTS</p>
+          <div class="text-sm font-semibold text-gray-600">CONTENTS</div>
           <ul>
             <li v-for="link of article.toc" :key="link.id">
               <NuxtLink :to="`#${link.id}`"
@@ -115,7 +121,7 @@ export default {
   </article>
 </template>
 
-<style scoped>
+<style>
 .article-image {
   box-shadow: inset 0px -50px 40px #050505, inset 0px 50px 40px #050505;
 }
@@ -130,5 +136,19 @@ export default {
 .content-link:hover {
   transform: translateX(10px);
   transition: 0.2s;
+}
+
+blockquote > p {
+  @apply px-4 border-l-4 py-3 mb-0 font-medium rounded-md bg-gray-900;
+  border-color: var(--color);
+}
+
+aside {
+  @apply px-4 border-l-4 py-3 font-medium rounded-md bg-gray-900 mb-4;
+  border-color: var(--color);
+}
+
+.nuxt-content > a {
+  color: var(--color);
 }
 </style>
