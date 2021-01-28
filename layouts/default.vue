@@ -3,6 +3,7 @@
     <div>
       <NavBar />
       <Nuxt />
+      <Footer />
     </div>
   </div>
 </template>

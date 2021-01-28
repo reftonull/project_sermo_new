@@ -45,19 +45,17 @@ export default {
 <template>
   <article>
     <div class="mx-auto my-auto max-w-6xl p-5 relative">
-      <div class="lg:px-2 m-auto">
+      <div class="m-auto">
         <div class="font-sans text-4xl font-semibold leading-none py-2">
           {{ project.title }}
         </div>
         <div
           class="flex flex-row space-x-2 font-semibold text-gray-600 text-md leading-5 pb-2"
         >
-          <div>{{ formatDate(project.createdAt) }}</div>
-          <div>•</div>
-          <div v-if="project.words">
-            {{ Math.round(project.words / 175) }} minute read
+          <div v-if="project.readingTime">
+            {{ Math.ceil(project.readingTime.minutes) }} minute read
           </div>
-          <div v-if="project.words">•</div>
+          <div v-if="project.readingTime">•</div>
           <div class="cursor-pointer" @click="copyLink()">
             <CopyIcon></CopyIcon>
           </div>

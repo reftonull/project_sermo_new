@@ -19,12 +19,10 @@
         <div
           class="flex flex-row space-x-2 font-semibold text-gray-600 text-md leading-5 pb-2"
         >
-          <div>{{ formatDate(project.createdAt) }}</div>
-          <div>•</div>
-          <div v-if="project.words">
-            {{ Math.round(project.words / 175) }} minute read
+          <div v-if="project.readingTime">
+            {{ Math.ceil(project.readingTime.minutes) }} minute read
           </div>
-          <div v-if="project.words">•</div>
+          <div v-if="project.readingTime">•</div>
           <div class="cursor-pointer" @click="copyLink()">
             <CopyIcon></CopyIcon>
           </div>
@@ -53,12 +51,10 @@
         <div
           class="flex flex-row space-x-2 font-semibold text-gray-600 text-md leading-5 pb-2"
         >
-          <div>{{ formatDate(project.createdAt) }}</div>
-          <div>•</div>
-          <div v-if="project.words">
-            {{ Math.round(project.words / 175) }} minute read
+          <div v-if="project.readingTime">
+            {{ Math.ceil(project.readingTime.minutes) }} minute read
           </div>
-          <div v-if="project.words">•</div>
+          <div v-if="project.readingTime">•</div>
           <div class="cursor-pointer" @click="copyLink()">
             <CopyIcon></CopyIcon>
           </div>

@@ -59,7 +59,7 @@ export default {
 <template>
   <article>
     <div class="mx-auto my-auto max-w-6xl p-5 relative">
-      <div class="lg:px-2 m-auto">
+      <div class="m-auto">
         <div
           class="font-sans font-bold border-b-2 inline-block bord"
           :style="{ color: tag.accentColor, 'border-color': tag.accentColor }"
@@ -74,10 +74,10 @@ export default {
         >
           <div>{{ formatDate(article.createdAt) }}</div>
           <div>•</div>
-          <div v-if="article.words">
-            {{ Math.round(article.words / 175) }} minute read
+          <div v-if="article.readingTime">
+            {{ Math.ceil(article.readingTime.minutes) }} minute read
           </div>
-          <div v-if="article.words">•</div>
+          <div v-if="article.readingTime">•</div>
           <div
             class="cursor-pointer"
             :style="{ color: tag.accentColor }"
