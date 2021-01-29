@@ -14,12 +14,12 @@ html {
 }
 
 body {
-  @apply text-gray-200 leading-snug;
+  @apply text-gray-200 leading-snug min-h-screen;
 }
 
 @screen lg {
   body {
-    @apply text-lg;
+    @apply text-xl;
   }
 }
 

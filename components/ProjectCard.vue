@@ -114,7 +114,7 @@ export default {
 
 <style scoped>
 .article-image {
-  box-shadow: inset 0px -100px 60px #050505;
+  box-shadow: inset 0px -100px 60px #171a28;
 }
 
 .title:hover {

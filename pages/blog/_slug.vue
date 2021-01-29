@@ -123,7 +123,7 @@ export default {
 
 <style>
 .article-image {
-  box-shadow: inset 0px -50px 40px #050505, inset 0px 50px 40px #050505;
+  box-shadow: inset 0px -50px 40px #171a28, inset 0px 50px 40px #171a28;
 }
 
 .img {

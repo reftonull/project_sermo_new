@@ -3,8 +3,8 @@
     <div>Copyright © Laksh Chakraborty 2021.</div>
     <div>
       <a href="https://twitter.com/_nullref_" class="underline">Twitter</a> |
-      <a href="/" class="underline">RSS</a> |
-      <a href="/" class="underline">Contact</a>
+      <a href="/rss" class="underline">RSS</a> |
+      <a href="/about" class="underline">Contact</a>
     </div>
   </div>
 </template>

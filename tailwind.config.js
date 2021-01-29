@@ -14,13 +14,14 @@ module.exports = {
         md: '0.925em',
       },
       maxWidth: {
+        xxs: '12rem',
         prose: '70ch',
       },
       maxHeight: {
         96: '35rem',
       },
       colors: {
-        'dark-gray': '#050505',
+        'dark-gray': '#171a28',
       },
     },
   },

@@ -70,6 +70,8 @@ export default {
         theme: 'prism-themes/themes/prism-material-oceanic.css',
       },
     },
+
+    liveEdit: false,
   },
 
   toast: {

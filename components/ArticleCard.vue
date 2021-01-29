@@ -23,10 +23,10 @@
       >
         <div>{{ formatDate(article.createdAt) }}</div>
         <div>•</div>
-        <div v-if="article.words">
-          {{ Math.round(article.words / 175) }} minute read
+        <div v-if="article.readingTime">
+          {{ Math.ceil(article.readingTime.minutes) }} minute read
         </div>
-        <div v-if="article.words">•</div>
+        <div v-if="article.readingTime">•</div>
         <div
           class="cursor-pointer"
           :style="{ color: tag.accentColor }"
@@ -112,7 +112,7 @@ export default {
 
 <style scoped>
 .article-image {
-  box-shadow: inset 0px -100px 60px #050505;
+  box-shadow: inset 0px -100px 60px #171a28;
 }
 
 .title:hover {

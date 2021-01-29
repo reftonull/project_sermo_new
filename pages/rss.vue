@@ -1,13 +1,13 @@
 <script>
 export default {
   async asyncData({ $content, params }) {
-    const about = await $content('about').fetch()
+    const rss = await $content('rss').fetch()
 
-    return { about }
+    return { rss }
   },
   methods: {
     copyLink() {
-      const path = 'localhost:3000/about'
+      const path = 'localhost:3000/rss'
       navigator.clipboard.writeText(path)
       const options = {
         duration: 1500,
@@ -43,45 +43,30 @@ export default {
     <div class="mx-auto my-auto max-w-6xl p-5 relative">
       <div class="m-auto">
         <div class="font-sans text-4xl font-semibold leading-none py-2">
-          {{ about.title }}
+          {{ rss.title }}
         </div>
         <div
           class="flex flex-row space-x-2 font-semibold text-gray-600 text-md leading-5 pb-2"
         >
-          <div v-if="about.readingTime">
-            {{ Math.ceil(about.readingTime.minutes) }} minute read
+          <div v-if="rss.readingTime">
+            {{ Math.ceil(rss.readingTime.minutes) }} minute read
           </div>
-          <div v-if="about.readingTime">•</div>
+          <div v-if="rss.readingTime">•</div>
           <div class="cursor-pointer" @click="copyLink()">
             <CopyIcon></CopyIcon>
           </div>
         </div>
       </div>
-      <div v-if="about.img" class="shadow-inner article-image w-auto flex mb-6">
+      <div v-if="rss.img" class="shadow-inner article-image w-auto flex mb-6">
         <img
-          :src="about.img"
+          :src="rss.img"
           class="img rounded-xl max-h-96 object-cover flex-1"
         />
       </div>
-      <div class="flex lg:flex-row flex-col-reverse m-auto pt-4 lg:space-x-5">
-        <nuxt-content
-          :document="about"
-          class="font-sans max-w-prose flex-auto"
-        />
-        <nav class="flex-shrink-0 mb-6">
-          <div class="text-sm font-semibold text-gray-600">CONTENTS</div>
-          <ul>
-            <li v-for="link of about.toc" :key="link.id">
-              <NuxtLink :to="`#${link.id}`"
-                ><div
-                  class="text-base my-3 font-medium text-gray-700 content-link"
-                >
-                  {{ link.text }}
-                </div>
-              </NuxtLink>
-            </li>
-          </ul>
-        </nav>
+      <div
+        class="flex lg:flex-row flex-col-reverse m-auto pt-4 lg:space-x-5 justify-items-center"
+      >
+        <nuxt-content :document="rss" class="font-sans max-w-prose flex-auto" />
       </div>
     </div>
   </article>
