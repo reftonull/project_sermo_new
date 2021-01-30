@@ -6,9 +6,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['IBM Plex Sans', ...defaultTheme.fontFamily.sans],
+        sans: ['Google Sans', ...defaultTheme.fontFamily.sans],
         logo: ['Montserrat', 'system-ui'],
-        navigation: ['Raleway', 'system-ui'],
       },
       fontSize: {
         md: '0.925em',

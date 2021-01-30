@@ -5,7 +5,7 @@
     </div>
     <div class="px-2 -mt-20">
       <div
-        class="font-sans font-bold border-b-2 inline-block"
+        class="font-sans font-bold border-b-2 inline-block text-md"
         :style="{ color: tag.accentColor, 'border-color': tag.accentColor }"
       >
         {{ tag.name.toUpperCase() }}
