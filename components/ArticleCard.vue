@@ -32,7 +32,7 @@
           :style="{ color: tag.accentColor }"
           @click="copyLink()"
         >
-          <CopyIcon></CopyIcon>
+          <IconsCopyIcon></IconsCopyIcon>
         </div>
       </div>
       <div class="text-md leading-6">

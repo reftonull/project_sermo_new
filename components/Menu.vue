@@ -2,7 +2,7 @@
   <div>
     <div id="myNav" class="overlay bg-gray-900">
       <div class="cursor-pointer m-4" @click="closeMenu()">
-        <CloseIcon />
+        <IconsCloseIcon />
       </div>
       <div class="flex flex-col space-y-8">
         <div class="block text-center font-semibold">
@@ -23,7 +23,7 @@
     </div>
 
     <div class="cursor-pointer" @click="openMenu()">
-      <MenuIcon />
+      <IconsMenuIcon />
     </div>
   </div>
 </template>

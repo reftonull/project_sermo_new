@@ -35,11 +35,11 @@ export default {
       v-if="currentPage === 1"
       class="flex flex-row text-gray-700 bg-gray-800 rounded-full p-3"
     >
-      <DoubleLeftIcon />
+      <IconsDoubleLeftIcon />
     </div>
     <NuxtLink v-else :to="{ name: 'blog-page-page', params: { page: 1 } }">
       <div class="flex flex-row bg-gray-800 rounded-full p-3">
-        <DoubleLeftIcon />
+        <IconsDoubleLeftIcon />
       </div>
     </NuxtLink>
 
@@ -47,14 +47,14 @@ export default {
       v-if="currentPage === 1"
       class="flex flex-row text-gray-700 bg-gray-800 rounded-full p-3"
     >
-      <SingleLeftIcon />
+      <IconsSingleLeftIcon />
     </div>
     <NuxtLink
       v-else
       :to="{ name: 'blog-page-page', params: { page: prevPage } }"
     >
       <div class="flex flex-row bg-gray-800 rounded-full p-3">
-        <SingleLeftIcon />
+        <IconsSingleLeftIcon />
       </div>
     </NuxtLink>
 
@@ -68,14 +68,14 @@ export default {
       v-if="currentPage === totalPages"
       class="flex flex-row text-gray-700 bg-gray-800 rounded-full p-3"
     >
-      <SingleRightIcon />
+      <IconsSingleRightIcon />
     </div>
     <NuxtLink
       v-else
       :to="{ name: 'blog-page-page', params: { page: nextPage } }"
     >
       <div class="flex flex-row bg-gray-800 rounded-full p-3">
-        <SingleRightIcon />
+        <IconsSingleRightIcon />
       </div>
     </NuxtLink>
 
@@ -83,14 +83,14 @@ export default {
       v-if="currentPage === totalPages"
       class="flex flex-row text-gray-700 bg-gray-800 rounded-full p-3"
     >
-      <DoubleRightIcon />
+      <IconsDoubleRightIcon />
     </div>
     <NuxtLink
       v-else
       :to="{ name: 'blog-page-page', params: { page: totalPages } }"
     >
       <div class="flex flex-row bg-gray-800 rounded-full p-3">
-        <DoubleRightIcon />
+        <IconsDoubleRightIcon />
       </div>
     </NuxtLink>
   </div>

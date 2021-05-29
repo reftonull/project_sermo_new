@@ -24,7 +24,7 @@
           </div>
           <div v-if="project.readingTime">•</div>
           <div class="cursor-pointer" @click="copyLink()">
-            <CopyIcon></CopyIcon>
+            <IconsCopyIcon></IconsCopyIcon>
           </div>
         </div>
         <div class="text-md leading-6">
@@ -56,7 +56,7 @@
           </div>
           <div v-if="project.readingTime">•</div>
           <div class="cursor-pointer" @click="copyLink()">
-            <CopyIcon></CopyIcon>
+            <IconsCopyIcon></IconsCopyIcon>
           </div>
         </div>
         <div class="text-md leading-6">

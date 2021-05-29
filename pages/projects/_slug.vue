@@ -57,7 +57,7 @@ export default {
           </div>
           <div v-if="project.readingTime">•</div>
           <div class="cursor-pointer" @click="copyLink()">
-            <CopyIcon></CopyIcon>
+            <IconsCopyIcon></IconsCopyIcon>
           </div>
         </div>
       </div>

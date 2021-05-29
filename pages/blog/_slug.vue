@@ -83,7 +83,7 @@ export default {
             :style="{ color: tag.accentColor }"
             @click="copyLink()"
           >
-            <CopyIcon></CopyIcon>
+            <IconsCopyIcon></IconsCopyIcon>
           </div>
         </div>
       </div>
