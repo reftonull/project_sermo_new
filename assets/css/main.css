@@ -28,6 +28,10 @@ p {
   @apply mb-4;
 }
 
+.nuxt-content a {
+  color: #DEA6EE;
+}
+
 .toasted.toasted-primary.toast {
   @apply bg-gray-900 border-purple-600 border-2 rounded-md px-5 py-3 font-semibold font-logo m-2;
 }
@@ -40,8 +44,13 @@ blockquote {
   @apply mb-4;
 }
 
+blockquote > p {
+  border-color: #DEA6EE;
+}
+
 pre {
   @apply rounded-md;
+  color: #DEA6EE;
 }
 
 .nuxt-content-highlight {

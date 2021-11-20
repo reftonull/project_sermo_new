@@ -13,7 +13,7 @@ Learn how to write your `content/`, supporting Markdown, YAML, CSV and JSON: htt
 
 ## Fetching content
 
-Learn how to fetch your content with `$content`: https://content.nuxtjs.org/fetching.
+Learn [how](google.com) to fetch your content with `$content`: https://content.nuxtjs.org/fetching.
 
 ## Displaying content
 

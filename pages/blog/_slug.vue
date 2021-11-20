@@ -143,6 +143,10 @@ blockquote > p {
   border-color: var(--color);
 }
 
+.nuxt-content a {
+  color: var(--color);
+}
+
 aside {
   @apply px-4 border-l-4 py-3 font-medium rounded-md bg-gray-900 mb-4;
   border-color: var(--color);
