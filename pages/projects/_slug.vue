@@ -50,7 +50,14 @@ export default {
           {{ project.title }}
         </div>
         <div
-          class="flex flex-row space-x-2 font-semibold text-gray-600 text-md leading-5 pb-2"
+          class="
+            flex flex-row
+            space-x-2
+            font-semibold
+            text-gray-600 text-md
+            leading-5
+            pb-2
+          "
         >
           <div v-if="project.readingTime">
             {{ Math.ceil(project.readingTime.minutes) }} minute read

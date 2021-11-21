@@ -1,5 +1,5 @@
 <template>
-  <div class="flex max-w-6xl mx-auto">
+  <div class="flex max-w-6xl">
     <div class="flex flex-row p-5 w-full">
       <div class="font-logo flex-none text-lg text-center self-center">
         <NuxtLink to="/"> LAKSH <strong>CHAKRABORTY</strong> </NuxtLink>

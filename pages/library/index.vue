@@ -18,7 +18,7 @@ export default {
 </script>
 
 <template>
-  <div class="mx-auto max-w-6xl px-5">
+  <div class="px-5">
     <div class="font-sans text-4xl font-semibold leading-none py-2 mb-5">
       Library
     </div>

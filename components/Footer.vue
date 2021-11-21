@@ -3,8 +3,8 @@
     <div>Copyright © Laksh Chakraborty 2021.</div>
     <div>
       <a href="https://twitter.com/_nullref_" class="underline">Twitter</a> |
-      <a href="/rss" class="underline">RSS</a> |
-      <a href="/about" class="underline">Contact</a>
+      <a href="https://github.com/reftonull" class="underline">Github</a> |
+      <NuxtLink to="/about#contact" class="underline">Contact</NuxtLink>
     </div>
   </div>
 </template>

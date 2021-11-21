@@ -10,14 +10,20 @@
       <div class="-mt-20">
         <NuxtLink
           :to="{ name: 'projects-slug', params: { slug: project.slug } }"
-          class="hover:text-gray-700"
         >
           <div class="font-sans text-4xl font-semibold leading-none py-2 title">
             {{ project.title }}
           </div>
         </NuxtLink>
         <div
-          class="flex flex-row space-x-2 font-semibold text-gray-600 text-md leading-5 pb-2"
+          class="
+            flex flex-row
+            space-x-2
+            font-semibold
+            text-gray-600 text-md
+            leading-5
+            pb-2
+          "
         >
           <div v-if="project.readingTime">
             {{ Math.ceil(project.readingTime.minutes) }} minute read
@@ -34,7 +40,18 @@
     </div>
     <div
       v-else
-      class="flex lg:flex-row flex-col items-center lg:space-x-8 space-y-4 lg:space-y-0 lg:max-w-full max-w-md lg:mx-0 mx-auto"
+      class="
+        flex
+        lg:flex-row
+        flex-col
+        items-center
+        lg:space-x-8
+        space-y-4
+        lg:space-y-0 lg:max-w-full
+        max-w-md
+        lg:mx-0
+        mx-auto
+      "
     >
       <div v-if="project.img" class="w-auto max-w-lg">
         <img :src="project.img" class="img rounded-xl" />
@@ -42,14 +59,21 @@
       <div class="">
         <NuxtLink
           :to="{ name: 'projects-slug', params: { slug: project.slug } }"
-          class="hover:text-gray-700"
+          class="hover:text-purple-400"
         >
           <div class="font-sans text-4xl font-semibold leading-none py-2 title">
             {{ project.title }}
           </div>
         </NuxtLink>
         <div
-          class="flex flex-row space-x-2 font-semibold text-gray-600 text-md leading-5 pb-2"
+          class="
+            flex flex-row
+            space-x-2
+            font-semibold
+            text-gray-600 text-md
+            leading-5
+            pb-2
+          "
         >
           <div v-if="project.readingTime">
             {{ Math.ceil(project.readingTime.minutes) }} minute read

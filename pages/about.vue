@@ -46,7 +46,14 @@ export default {
           {{ about.title }}
         </div>
         <div
-          class="flex flex-row space-x-2 font-semibold text-gray-600 text-md leading-5 pb-2"
+          class="
+            flex flex-row
+            space-x-2
+            font-semibold
+            text-gray-600 text-md
+            leading-5
+            pb-2
+          "
         >
           <div v-if="about.readingTime">
             {{ Math.ceil(about.readingTime.minutes) }} minute read
@@ -57,17 +64,22 @@ export default {
           </div>
         </div>
       </div>
-      <div v-if="about.img" class="shadow-inner article-image w-auto flex mb-6">
-        <img
-          :src="about.img"
-          class="img rounded-xl max-h-96 object-cover flex-1"
-        />
-      </div>
       <div class="flex lg:flex-row flex-col-reverse m-auto pt-4 lg:space-x-5">
-        <nuxt-content
-          :document="about"
-          class="font-sans max-w-prose flex-auto"
-        />
+        <div>
+          <div
+            v-if="about.img"
+            class="shadow-inner article-image w-auto flex mb-6"
+          >
+            <img
+              :src="about.img"
+              class="img rounded-xl object-cover flex-1 max-w-2xl"
+            />
+          </div>
+          <nuxt-content
+            :document="about"
+            class="font-sans max-w-prose flex-auto"
+          />
+        </div>
         <nav class="flex-shrink-0 mb-6">
           <div class="text-sm font-semibold text-gray-600">CONTENTS</div>
           <ul>

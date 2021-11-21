@@ -6,9 +6,6 @@
       </div>
       <div class="flex flex-col space-y-8">
         <div class="block text-center font-semibold">
-          <NuxtLink to="/" @click.native="closeMenu()">Blog</NuxtLink>
-        </div>
-        <div class="block text-center font-semibold">
           <NuxtLink to="/projects" @click.native="closeMenu()"
             >Projects</NuxtLink
           >

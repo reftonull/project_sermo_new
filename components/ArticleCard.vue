@@ -19,7 +19,14 @@
         </div>
       </NuxtLink>
       <div
-        class="flex flex-row space-x-2 font-semibold text-gray-600 text-md leading-5 pb-2"
+        class="
+          flex flex-row
+          space-x-2
+          font-semibold
+          text-gray-600 text-md
+          leading-5
+          pb-2
+        "
       >
         <div>{{ formatDate(article.createdAt) }}</div>
         <div>•</div>
