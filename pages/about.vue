@@ -98,3 +98,15 @@ export default {
     </div>
   </article>
 </template>
+
+<style scoped>
+.img {
+  z-index: -2;
+  position: relative;
+  min-width: 200px;
+  min-height: 200px;
+}
+.article-image {
+  box-shadow: inset 0px -50px 40px #171a28, inset 0px 50px 40px #171a28;
+}
+</style>
