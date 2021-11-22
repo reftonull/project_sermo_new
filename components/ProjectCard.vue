@@ -105,7 +105,7 @@ export default {
       return new Date(date).toLocaleDateString('en', options)
     },
     copyLink() {
-      const path = 'localhost:3000/projects/' + this.project.slug
+      const path = 'lakshchakraborty.com/projects/' + this.project.slug
       navigator.clipboard.writeText(path)
       const options = {
         duration: 1500,
