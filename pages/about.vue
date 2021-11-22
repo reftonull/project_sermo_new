@@ -7,7 +7,7 @@ export default {
   },
   methods: {
     copyLink() {
-      const path = 'localhost:3000/about'
+      const path = 'lakshchakraborty.com/about'
       navigator.clipboard.writeText(path)
       const options = {
         duration: 1500,

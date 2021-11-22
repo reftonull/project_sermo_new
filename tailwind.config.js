@@ -6,7 +6,7 @@ module.exports = {
   theme: {
     extend: {
       gridTemplateColumns: {
-        'fill-auto': 'repeat(auto-fill, minmax(6em, 13em))',
+        'fill-auto': 'repeat(auto-fill, minmax(6em, 12em))',
         'fill-auto-sm': 'repeat(auto-fill, minmax(6em, 10.5em))',
       },
       fontFamily: {
