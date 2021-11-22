@@ -5,6 +5,9 @@ module.exports = {
   darkMode: 'media', // or 'media' or 'class'
   theme: {
     extend: {
+      gridTemplateColumns: {
+        'fill-auto': 'repeat(auto-fill, minmax(8em, 13em))',
+      },
       fontFamily: {
         sans: ['Google Sans', ...defaultTheme.fontFamily.sans],
         logo: ['Montserrat', 'system-ui'],

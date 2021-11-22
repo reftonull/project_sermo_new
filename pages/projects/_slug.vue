@@ -106,6 +106,17 @@ export default {
   box-shadow: inset 0px -50px 40px #171a28, inset 0px 50px 40px #171a28;
 }
 
+img {
+  border-radius: 0.5em;
+}
+
+.caption {
+  margin-left: 1em;
+  font-size: 0.875em;
+  margin-bottom: 1em;
+  margin-top: -0.5em;
+}
+
 .img {
   z-index: -2;
   position: relative;
@@ -124,8 +135,5 @@ blockquote > p {
 
 aside {
   @apply px-4 border-l-4 py-3 font-medium rounded-md bg-gray-900 mb-4;
-}
-
-.nuxt-content > a {
 }
 </style>

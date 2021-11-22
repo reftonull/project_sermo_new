@@ -10,7 +10,7 @@ export default {
 </script>
 
 <template>
-  <div class="grid auto-cols-max grid-flow-col space-x-5">
+  <div class="grid flex-1 grid-cols-fill-auto grid-flow-row">
     <div v-for="item in list" :key="item.slug">
       <DescryItem :item="item" />
     </div>
