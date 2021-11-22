@@ -1,7 +1,7 @@
 ---
 title: "This Site: The Technical Details, and a Tale of Feature Creep"
 description: How this site came together! How very meta.
-img: 
+img: /images/projects/this-site/this-site.png
 isFeatured: true
 order: 1
 ---
